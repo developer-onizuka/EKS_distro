@@ -180,7 +180,7 @@ end
 ```
 
 
-```
+
     1  cat /etc/docker/daemon.json 
     2  kubeadm init --pod-network-cidr=10.10.0.0/16
     3  kubectl get nodes
@@ -287,8 +287,7 @@ end
   104  EOF
   105  vi kubeadm-config.yaml 
   106  kubeadm init --config kubeadm-config.yaml
-  ```
-  ```
+
     2  kubeadm join 192.168.121.197:6443 --token jhiv0b.l8i0cx1bnj2g0mqz --discovery-token-ca-cert-hash sha256:5cafadbe1203b5682e038eb8faf14ddc9201df5783a1890cc4786153ab6360cf
     3  kubeadm reset
     4  yum remove -y kubelet kubeadm kubectl --disableexcludes=kubernetes
@@ -352,4 +351,4 @@ EOF
    30  docker tag public.ecr.aws/eks-distro/coredns/coredns:v1.7.0-eks-1-18-1 public.ecr.aws/eks-distro/kubernetes/coredns:1.6.7
    31  kubeadm join 192.168.121.197:6443 --token zs4qt3.k64abd630brugvil     --discovery-token-ca-cert-hash sha256:5a5ca9e3443ad61ee7c80eb60347677fc11eaadd3d831538a6217f54ac7aedb2 
    32  history
-```
+
