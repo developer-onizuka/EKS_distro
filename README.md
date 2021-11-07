@@ -1,4 +1,5 @@
 # EKS Distro (AWS base Kubernetes)
+- https://snapcraft.io/eks
 
 You might use the Vagrantfile attached. It will deploy the following Virtual Machines.
 - One master node (No GPU machine)
@@ -62,5 +63,4 @@ kube-system   coredns-6788f546c9-bmbpv                   1/1     Running   0    
 kube-system   calico-node-7bb5b                          1/1     Running   1          16m   192.168.121.253   master    <none>           <none>
 kube-system   aws-iam-authenticator-fjzlp                1/1     Running   1          15m   192.168.121.145   worker1   <none>           <none>
 kube-system   calico-node-ckd67                          1/1     Running   1          15m   192.168.121.145   worker1   <none>           <none>
-
 ```
