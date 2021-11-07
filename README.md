@@ -48,6 +48,18 @@ Waiting for this node to finish joining the cluster. ..
 
 # 5. Check the Cluster on Master node
 ```
+$ eks status
+eks is running
+high-availability: no
+  datastore master nodes: 192.168.33.120:19001
+  datastore standby nodes: none
+
+$ ssh vagrant@192.168.33.121 sudo eks status
+eks is running
+high-availability: no
+  datastore master nodes: 192.168.33.120:19001
+  datastore standby nodes: none
+
 $ eks kubectl get nodes -o wide
 NAME      STATUS   ROLES    AGE   VERSION              INTERNAL-IP       EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
 worker1   Ready    <none>   11m   v1.18.9-eks-1-18-1   192.168.121.145   <none>        Ubuntu 20.04.3 LTS   5.4.0-81-generic   containerd://1.3.7
@@ -63,4 +75,23 @@ kube-system   coredns-6788f546c9-bmbpv                   1/1     Running   0    
 kube-system   calico-node-7bb5b                          1/1     Running   1          16m   192.168.121.253   master    <none>           <none>
 kube-system   aws-iam-authenticator-fjzlp                1/1     Running   1          15m   192.168.121.145   worker1   <none>           <none>
 kube-system   calico-node-ckd67                          1/1     Running   1          15m   192.168.121.145   worker1   <none>           <none>
+```
+
+# 6. Install Helm
+```
+$ eks kubectl config view --raw > $HOME/.kube/config
+$ chmod 600 ~/.kube/config
+
+$ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
+&& chmod 700 get_helm.sh \
+&& ./get_helm.sh
+```
+
+# 7. Install GPU Operator
+```
+$ helm repo add nvidia https://nvidia.github.io/gpu-operator \
+&& helm repo update
+
+$ helm install --wait --generate-name \
+nvidia/gpu-operator
 ```
