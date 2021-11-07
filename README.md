@@ -47,7 +47,7 @@ Waiting for this node to finish joining the cluster. ..
 
 # 5. Check the Cluster on Master node
 ```
-$ # eks kubectl get nodes -o wide
+$ eks kubectl get nodes -o wide
 NAME      STATUS   ROLES    AGE   VERSION              INTERNAL-IP       EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
 worker1   Ready    <none>   11m   v1.18.9-eks-1-18-1   192.168.121.145   <none>        Ubuntu 20.04.3 LTS   5.4.0-81-generic   containerd://1.3.7
 master    Ready    <none>   28m   v1.18.9-eks-1-18-1   192.168.121.253   <none>        Ubuntu 20.04.3 LTS   5.4.0-81-generic   containerd://1.3.7
