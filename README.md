@@ -88,6 +88,8 @@ $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/s
 ```
 
 # 7. Install GPU Operator
+Not work yet. I am investigating now.
+-----
 ```
 $ helm repo add nvidia https://nvidia.github.io/gpu-operator \
 && helm repo update
